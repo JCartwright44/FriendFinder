@@ -37,11 +37,11 @@ app.post("/api/friends", function (req, res) {
             bestFriendID = i;
             mostDiff = closeness
         }
-
+    }
         friendsArray.push(newFriend)
 
         res.json(friendsArray[bestFriendID])
-    }
+    // }
 
 
 });

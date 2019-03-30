@@ -30,9 +30,7 @@
             </div>
             <div class="form-group">
                 <label for="question1">Question 1</label>
-                <p>Sports Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, delectus? In sed ea
-                    tenetur
-                    dignissimos praesentium perspiciatis quos? Aperiam, facilis.</p>
+                <p>I enjoy playing sports.</p>
                 <select class="chosen-selet" id="question1">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -43,9 +41,7 @@
             </div>
             <div class="form-group">
                 <label for="question2">Question 2</label>
-                <p>Computers Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum aliquam ipsam animi natus
-                    voluptas
-                    nihil mollitia. Itaque, cumque.</p>
+                <p>I am very technically savvy.</p>
                 <select class="chosen-selet" id="question2">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -56,9 +52,7 @@
             </div>
             <div class="form-group">
                 <label for="question3">Question 3</label>
-                <p>Fashion Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo deleniti soluta
-                    perferendis
-                    laborum? Exercitationem eaque fugiat voluptatem tempore.</p>
+                <p>I like changing my style and shopping for the newest fashions.</p>
                 <select class="chosen-selet" id="question3">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -69,9 +63,7 @@
             </div>
             <div class="form-group">
                 <label for="question4">Question 4</label>
-                <p>Vacations travel Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam excepturi dolorum
-                    ducimus, delectus
-                    mollitia temporibus cupiditate sunt id.</p>
+                <p>I enjoy travelling around the world for my vacations.</p>
                 <select class="chosen-selet" id="question4">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -82,9 +74,7 @@
             </div>
             <div class="form-group">
                 <label for="question5">Question 5</label>
-                <p>Movies Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto ea similique error qui sint
-                    placeat
-                    quidem, eius dolorem.</p>
+                <p>Going to the movies is a great date idea.</p>
                 <select class="chosen-selet" id="question5">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -95,9 +85,7 @@
             </div>
             <div class="form-group">
                 <label for="question6">Question 6</label>
-                <p>Hiking Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore exercitationem, officiis
-                    atque animi
-                    impedit aperiam laboriosam placeat at.</p>
+                <p>I enjoy finding little known hiking trails and exploring them with my friends.</p>
                 <select class="chosen-selet" id="question6">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -108,9 +96,7 @@
             </div>
             <div class="form-group">
                 <label for="question7">Question 7</label>
-                <p>Live music Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt ipsum iste veritatis
-                    laborum! Sunt ad
-                    veritatis ducimus blanditiis!</p>
+                <p>I enjoy going out to see my favorite bands live.</p>
                 <select class="chosen-selet" id="question7">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -121,9 +107,7 @@
             </div>
             <div class="form-group">
                 <label for="question8">Question 8</label>
-                <p>Road trips Lorem, ipsum dolor sit amet consectetur adipisicing elit. Asperiores sapiente placeat
-                    magnam amet
-                    enim unde maxime temporibus nam.</p>
+                <p>Road trips are fun! I like to explore the country via highway.</p>
                 <select class="chosen-selet" id="question8">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -134,9 +118,7 @@
             </div>
             <div class="form-group">
                 <label for="question9">Question 9</label>
-                <p>TV marathons Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus ipsum totam
-                    quibusdam incidunt,
-                    nisi nostrum at est. Eveniet.</p>
+                <p>I spend my weekends watching lots of Netflix and having tv marathons.</p>
                 <select class="chosen-selet" id="question9">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -147,9 +129,7 @@
             </div>
             <div class="form-group">
                 <label for="question10">Question 10</label>
-                <p>Dancing Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium fugiat nisi aspernatur,
-                    illo
-                    eveniet sint pariatur iusto reprehenderit?</p>
+                <p>Dancing is a fun activity. I can dance for hours to any type of music.</p>
                 <select class="chosen-select" id="question10">
                     <option>1 (Strongly disagree)</option>
                     <option>2</option>
@@ -176,51 +156,10 @@
                         <p id='bfName'></p>
                         <img id='bfPhoto' src="#" alt="photo">
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
                 </div>
             </div>
         </div>
 
-
-
-        <script type="text/javascript">
-            $('.btn').on('click', function (event) {
-                event.preventDefault();
-                var name = $('#inputName').val().trim();
-                var img = $('#photoImg').val().trim();
-                var answers = [
-                    $('#question1').val().charAt(0),
-                    $('#question2').val().charAt(0),
-                    $('#question3').val().charAt(0),
-                    $('#question4').val().charAt(0),
-                    $('#question5').val().charAt(0),
-                    $('#question6').val().charAt(0),
-                    $('#question7').val().charAt(0),
-                    $('#question8').val().charAt(0),
-                    $('#question9').val().charAt(0),
-                    $('#question10').val().charAt(0),
-                ];
-
-                var newFriend = {
-                    name: name,
-                    photo: img,
-                    scores: answers
-                }
-                console.log(newFriend);
-
-
-                $.post("/api/friends", newFriend)
-                    .then(function (data) {
-                        $('#bfName').text(data.name);
-                        $('#bfphoto').attr("src", data.photo);
-                        $('#newBestFriendModal').modal('toggle');
-                    });
-
-
-
-            })
         </script>
 
     </div>
@@ -229,7 +168,7 @@
 </body>
 
 
-<!-- <script type="text/javascript">
+<script type="text/javascript">
     $('.btn').on('click', function (event) {
         event.preventDefault();
         var name = $('#inputName').val().trim();
@@ -255,12 +194,22 @@
         console.log(newFriend);
 
 
-        $.post("/api/friends", newFriend)
-            .then(function (data) {
-                console.log('survey.html:', data)
-                alert('adding friend...')
+        // $.post("/api/friends", newFriend)
+        //     .then(function (data) {
+        //         $('#bfName').text(data.name);
+        //         $('#bfPhoto').attr('src', data.photo);
+        //         $('#newBestFriendModal').modal('toggle');
+        //     });
+
+            $.post("/api/friends", newFriend, function(data) {
+                $('#bfName').text(data.name);
+                $('#bfPhoto').attr('src', data.photo);
+                $('#newBestFriendModal').modal('toggle');
             });
- -->
+
+
+
+        // })
 
 
     })
